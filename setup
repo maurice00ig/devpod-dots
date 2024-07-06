@@ -6,15 +6,15 @@ ln -sf "$PWD/.config/nvim" "$XDG_CONFIG_HOME"/nvim
 ln -sf "$PWD/.config/zellij" "$XDG_CONFIG_HOME"/zellij
 ln -sf "$PWD/.config/starship.toml" "$XDG_CONFIG_HOME"/starship.toml
 
-packages=(
+packages="
 	fd-find
 	ripgrep
 	starship
 	lazygit
-    neovim
-)
+    neovim"
+
 
 sudo apt update
-DEBIAN_FRONTEND=noninteractive sudo apt install $($packages | tr '\n' ' ')
+DEBIAN_FRONTEND=noninteractive sudo apt install $packages
 
 echo "All packages have been installed."
