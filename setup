@@ -15,6 +15,6 @@ packages=(
 )
 
 sudo apt update
-sudo apt install $packages
+DEBIAN_FRONTEND=noninteractive sudo apt install $($packages | tr '\n' ' ')
 
 echo "All packages have been installed."
