@@ -20,14 +20,17 @@ else
 fi
 
 # set zsh as default shell for the remote user
-chsh -s "$(which zsh)" "$_REMOTE_USER"
+chsh -s "$(which zsh)"
 
 packages="
 	fd
 	ripgrep
 	starship
 	lazygit
-    neovim"
+    neovim
+    zoxide
+    eza
+    bat"
 
 brew install $packages
 
