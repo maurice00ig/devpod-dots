@@ -20,7 +20,7 @@ else
 fi
 
 # set zsh as default shell for the remote user
-chsh -s "$(which zsh)"
+sudo chsh -s "$(which zsh)"
 
 packages="
 	fd
