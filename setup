@@ -8,8 +8,20 @@ mkdir -p "$XDG_CONFIG_HOME"
 ln -sf "$PWD/.config/nvim" "$XDG_CONFIG_HOME"/nvim
 ln -sf "$PWD/.config/zellij" "$XDG_CONFIG_HOME"/zellij
 ln -sf "$PWD/.config/starship.toml" "$XDG_CONFIG_HOME"/starship.toml
+ln -sf "$PWD/.zshrc" "$HOME"/.zshrc
 
 echo "Installing Packages"
+# check if zsh is installed
+if which zsh; then
+  echo "ZSH is already installed. Great!"
+else
+  echo "ZSH needs to be installed"
+  brew install zsh
+fi
+
+# set zsh as default shell for the remote user
+chsh -s "$(which zsh)" "$_REMOTE_USER"
+
 packages="
 	fd
 	ripgrep
