@@ -19,8 +19,9 @@ else
   brew install zsh
 fi
 
+echo "Set zsh as default shell for $USER"
 # set zsh as default shell for the remote user
-sudo chsh -s "$(which zsh)"
+sudo chsh $USER -s "$(which zsh)"
 
 packages="
 	fd
@@ -30,7 +31,8 @@ packages="
     neovim
     zoxide
     eza
-    bat"
+    bat
+    zellij"
 
 brew install $packages
 
